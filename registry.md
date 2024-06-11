@@ -11,6 +11,8 @@ granular permission
 repository-scoped permission
 - A repository-scoped package inherits the permissions and visibility of the repository in which the package is published.
 
+GitHub Packages only supports authentication using a **personal access token (classic)**. 
+
 ## Container registry: GHCR
 - Docker login
     ```
