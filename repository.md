@@ -2,7 +2,7 @@
 - GitHub has a strict file limit of **100MB**
 - Github repository description cannot include newline (EOL)
     - otherwise it shows `Error saving your changes: Description control characters are not allowed`
-- [How to sync master to a fork](https://help.github.com/articles/syncing-a-fork/)
+- [branch protection rule](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule)
 ## Environment
 - Repository Environment Box: controlled by settings for the repository
     > The environments tab shows a block under the details of the repository. Once a deployment has been made to a service—be that GitHub Pages, or an external service—the historic deployments will show up in this tab. The checkbox in the settings for the repository will either display that information or hide it.  
@@ -10,3 +10,5 @@
 
 ## Insights
 - list people who have starred a GitHub repository: HTTP GET `${repository-url}/stargazers`
+
+
