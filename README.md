@@ -12,6 +12,6 @@ vice versa of github.com/davidkhala
 - [Github.com status live report](https://www.githubstatus.com/)
 - [Github :clown_face: Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet)
 - [Github Roadmap](https://github.com/github/roadmap)
-  - [kanban](https://github.com/orgs/github/projects/4247)
+  - [project kanban](https://github.com/orgs/github/projects/4247)
 ## Related projects
 [Github Workflow (davidkhala/ci-cd-utils)](https://github.com/davidkhala/ci-cd-utils/wiki/Github-Workflow)
