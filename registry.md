@@ -13,7 +13,7 @@ repository-scoped permission
 
 GitHub Packages only supports authentication using a **personal access token (classic)**. 
 
-## Container registry: GHCR
+## Container: GHCR
 - Docker login
     ```
     $ export CR_PAT=YOUR_personal_access_token
@@ -24,7 +24,9 @@ GitHub Packages only supports authentication using a **personal access token (cl
     ```
     docker push ghcr.io/OWNER/IMAGE_NAME:latest
     ```
-## Java registry
+## Java
 Apache Maven registry and Gradle registry only support repository-scoped permissions.
 - **granular permission not supported**
 
+## Python: WON'T DO
+revealed in [roadmap](https://github.com/github/roadmap/issues/94)
