@@ -15,9 +15,10 @@ list-images() {
 create(){
   # Create data disk
   gcloud compute disks create $data_disk --size=150GB --zone=${zone}
+  # Create instance
   gcloud compute instances create $instance --machine-type e2-highmem-4 \
     --image-project github-enterprise-public --image=$image \
-    --disk name=${data_disk} \
+    --boot-disk-size=200GB --disk name=${data_disk} \
     --metadata serial-port-enable=1 \
     --network NETWORK-NAME \
     --zone=${zone}
