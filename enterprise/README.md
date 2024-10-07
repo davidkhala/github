@@ -21,4 +21,5 @@ Install media format: OVA
 ### on GCP 
 [Official guide](https://docs.github.com/en/enterprise-server@3.14/admin/installing-your-enterprise-server/setting-up-a-github-enterprise-server-instance/installing-github-enterprise-server-on-google-cloud-platform)
 
+# [Storage architecture](https://docs.github.com/en/enterprise-server@3.14/admin/overview/system-overview#storage-architecture)
 
