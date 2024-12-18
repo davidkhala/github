@@ -34,17 +34,28 @@ Code security configurations
 
 
 # [Github Advanced Security (GHAS)](https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security)
-- Code scanning
-  - [Configuring default setup](https://docs.github.com/en/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning)
-    - Recommend to apply to all eligible repositories in an organization
-    - Scan Triggers
-      - On push default/protected branch
-      - On creating or committing to a pull request against default/protected branch, excluding pull requests from forks
-      - On a weekly schedule
-        - Idle: when no pushes and pull requests have occurred for 6 months
-    - build mode for compiled languages: `none` for C# and Java, otherwise `autobuild`
-    - [Steps: configure for single repos](https://docs.github.com/en/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning#configuring-default-setup-for-a-repository)
-- CodeQL CLI: a standalone, command-line tool that you can use to analyze code
+[About](https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security)
+- All features are available in public repository
+## Code scanning
+Location: [security_analysis](../../settings/security_analysis) > **Code scanning** > **Tools** > **CodeQL analysis**
+
+### CodeQL default configuration
+- It will *Overriding an existing advanced setup*
+- It will not introduce file in repository
+- Scan Triggers
+  - On push default/protected branch
+  - On creating or committing to a pull request against default/protected branch, excluding pull requests from forks
+  - On a weekly schedule
+    - Idle: when no pushes and pull requests have occurred for 6 months
+- > [Default setup will not run on PRs from Dependabot](https://github.com/orgs/community/discussions/121836#discussioncomment-9341155)
+
+- build mode for compiled languages: `none` for C# and Java, otherwise `autobuild`
+- [Steps: Configuring default setup for a repos](https://docs.github.com/en/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning#configuring-default-setup-for-a-repository)
+
+### CodeQL *advanced setup*
+It presents as a [Github workflow](https://github.com/davidkhala/ci-cd-utils/edit/master/.github/workflows/codeql.yml)
+
+## CodeQL CLI: a standalone, command-line tool that you can use to analyze code
   - [About](https://docs.github.com/en/code-security/codeql-cli/getting-started-with-the-codeql-cli/about-the-codeql-cli)
   - It can generate a database representation (the CodeQL database) of a codebase
     - consumed by [CodeQL](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-codeql) VSCode extension
@@ -65,6 +76,26 @@ Code security configurations
     - current latest release: [v2.20.0](https://github.com/github/codeql-action/releases/tag/codeql-bundle-v2.20.0)
     - validate command `codeql resolve packs`
   - It is written in nodejs
-- Secret scanning
-- Custom auto-triage rules
-- Dependency review 
+## Secret scanning
+[Enabling secret scanning for your repository](https://docs.github.com/en/code-security/secret-scanning/enabling-secret-scanning-features/enabling-secret-scanning-for-your-repository)
+## Custom auto-triage rules
+It allow user to create new Dependabot rule
+- [to your repository](https://docs.github.com/en/code-security/dependabot/dependabot-auto-triage-rules/customizing-auto-triage-rules-to-prioritize-dependabot-alerts#adding-custom-auto-triage-rules-to-your-repository)
+- [to your organization](https://docs.github.com/en/code-security/dependabot/dependabot-auto-triage-rules/customizing-auto-triage-rules-to-prioritize-dependabot-alerts#adding-custom-auto-triage-rules-to-your-organization)
+## Dependency review 
+Compare to Dependabot alerts 
+- Both will find vulnerabilities
+- Dependabot alerts discover that are already in your dependencies
+- Dependency review prevent new vulnerabilities from being introduced
+
+
+### Dependency review [(visualization)](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-dependency-changes-in-a-pull-request#reviewing-dependencies-in-a-pull-request)
+It provides a visualization of dependency changes (in package manifests or lock files) with a rich diff
+- Location: tab "Files Changed" of a pull request.
+
+### [dependency-review-action](https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review#about-the-dependency-review-action)
+- A Github Action
+- By default, dependency-review-action check will fail if it discovers any vulnerable packages.
+  - Part to checklist: A failed check blocks a pull request from being merged when the repository owner requires the dependency review check to pass. 
+
+
