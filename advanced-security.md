@@ -1,5 +1,6 @@
 # Free security features
 ## Dependency graph
+> When you create a pull request containing changes to dependencies that targets the default branch, GitHub uses the dependency graph to add dependency reviews to the pull request.
 ## Dependabot alerts
 Pre-requisite: You need to have CI first before apply patch
 - Merge Dependabot PR directly is a partial update. It always introduces consistence issue.
