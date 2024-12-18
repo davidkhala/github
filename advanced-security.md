@@ -1,6 +1,9 @@
 # Free security features
-- Dependency graph
-- Dependabot alerts
+## Dependency graph
+## Dependabot alerts
+Pre-requisite: You need to have CI first before apply patch
+- Merge Dependabot PR directly is a partial update. It always introduces consistence issue.
+- Make sure CI green before patch. Otherwise there is no destination of rollback, then you have to immediate rush towards resolution.
 
 ## Configure in Organization level
 Code security configurations
