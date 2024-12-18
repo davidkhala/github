@@ -1,4 +1,4 @@
-# Free security features
+# Free security
 ## Dependency graph
 Dependency graph is part of repository [Insights](../../network/dependencies)
 > GitHub uses the dependency graph to add dependency reviews to the pull request.
