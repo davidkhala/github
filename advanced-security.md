@@ -15,8 +15,7 @@ Code security configurations
   - It is `Suggested settings for Dependabot, secret scanning, and code scanning.`
   - Steps (need to be repeated regularly)
     1. **Apply to** > `All repositories without configurations`
-    2. ![image](https://github.com/user-attachments/assets/743c1341-bfce-47aa-a936-d4b7f02507e9)
-    3. **Use as default for newly created repositories:** > **All repositories**
+    2. **Use as default for newly created repositories:** > **All repositories**
 
 [Global code security settings](https://github.com/organizations/pbank-test/settings/security_analysis)
 - Location: Tab `Settings` > Left panel `Security` \ **Code Security** > `Global settings`
