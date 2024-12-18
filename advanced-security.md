@@ -1,6 +1,33 @@
-Free features
+# Free security features
 - Dependency graph
 - Dependabot alerts
+
+## Configure in Organization level
+Code security configurations
+- Location: Tab `Settings` > Left panel `Security` \ **Code Security** > `Configurations`
+- Apply **GitHub recommended** prebuilt configuration
+  - It is `Suggested settings for Dependabot, secret scanning, and code scanning.`
+  - Steps (need to be repeated regularly)
+    1. **Apply to** > `All repositories without configurations`
+    2. ![image](https://github.com/user-attachments/assets/743c1341-bfce-47aa-a936-d4b7f02507e9)
+    3. **Use as default for newly created repositories:** > **All repositories**
+
+[Global code security settings](https://github.com/organizations/pbank-test/settings/security_analysis)
+- Location: Tab `Settings` > Left panel `Security` \ **Code Security** > `Global settings`
+- **Dependabot**
+  - [x] **Dependabot on Actions runners**
+- **Code scanning**
+  - [x] **Recommend the extended query suite for repositories enabling default setup**
+    - Extended Query Suite detects lower risk issues, such as
+      - Misconfigurations
+      - Unused dependencies
+      - Potentially vulnerable code patterns
+- **Secret scanning**
+  - **Add a resource link in the CLI and web UI when a commit is blocked**
+    - a url-like text. free-form text is not allowed
+    - optional if you have universal support web
+
+
 # [Github Advanced Security (GHAS)](https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security)
 - Code scanning
   - [Configuring default setup](https://docs.github.com/en/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning)
