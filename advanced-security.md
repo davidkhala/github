@@ -4,13 +4,35 @@ Free features
 # [Github Advanced Security (GHAS)](https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security)
 - Code scanning
   - [Configuring default setup](https://docs.github.com/en/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning)
-    - It can also apply to all eligible repositories in an organization
+    - Recommend to apply to all eligible repositories in an organization
     - Scan Triggers
       - On push default/protected branch
       - On creating or committing to a pull request against default/protected branch, excluding pull requests from forks
       - On a weekly schedule
         - Idle: when no pushes and pull requests have occurred for 6 months
-- CodeQL CLI
+    - build mode for compiled languages: `none` for C# and Java, otherwise `autobuild`
+    - [Steps: configure for single repos](https://docs.github.com/en/code-security/code-scanning/enabling-code-scanning/configuring-default-setup-for-code-scanning#configuring-default-setup-for-a-repository)
+- CodeQL CLI: a standalone, command-line tool that you can use to analyze code
+  - [About](https://docs.github.com/en/code-security/codeql-cli/getting-started-with-the-codeql-cli/about-the-codeql-cli)
+  - It can generate a database representation (the CodeQL database) of a codebase
+    - consumed by [CodeQL](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-codeql) VSCode extension
+    - command: `codeql database create`
+  - You can query CodeQL database interactively
+  - You can generate a set of results in `SARIF` format
+    - by running a suite of queries
+      - command: `codeql database analyze`
+    - to upload to Github for display
+      - command: `codeql github upload-results`
+  - Use cases
+    - offline on-prem environment
+    - Use CodeQL on 3rd-party CI systems including Azure DevOps
+    - Advanced code scanning: write your own query as security researcher
+  - [e2e Example](https://docs.github.com/en/code-security/codeql-cli/getting-started-with-the-codeql-cli/about-the-codeql-cli#example-ci-configuration-for-codeql-analysis)
+  - [Install](https://docs.github.com/en/code-security/codeql-cli/getting-started-with-the-codeql-cli/setting-up-the-codeql-cli)
+    - dlp format: a tar archive in [release page](https://github.com/github/codeql-action/releases) containing the CLI binary, source code and compiled of queries and libraries
+    - current latest release: [v2.20.0](https://github.com/github/codeql-action/releases/tag/codeql-bundle-v2.20.0)
+    - validate command `codeql resolve packs`
+  - It is written in nodejs
 - Secret scanning
 - Custom auto-triage rules
 - Dependency review 
