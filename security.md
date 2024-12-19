@@ -36,6 +36,9 @@ Code security configurations
 # [Github Advanced Security (GHAS)](https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security)
 [About](https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security)
 - All features are available in public repository
+- Features having native push prevention
+  - [dependency-review-action](#dependency-review-action)
+  - [Code scanning](#code-scanning)
 ## Code scanning
 Location: [security_analysis](../../settings/security_analysis) > **Code scanning** > **Tools** > **CodeQL analysis**
 
