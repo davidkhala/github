@@ -1,0 +1,2 @@
+Features available in Enterprise Cloud only (not in Server release)
+- [Exporting data from security overview](https://docs.github.com/en/enterprise-cloud@latest/code-security/security-overview/exporting-data-from-security-overview)
