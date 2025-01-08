@@ -23,6 +23,9 @@ Retention period
 - configurable, up to 6 months, except fot **Git Events**
 
 
+# Export
+Exported CSV is a denormalized wide table
+
 ## Log Streaming
 integration with
 - Azure Events Hub (native)
