@@ -1,7 +1,7 @@
 import {Octokit} from 'octokit';
 
 
-export default class GithubRestAPI {
+export default class API {
     isPublic
 
     /**
@@ -20,11 +20,11 @@ export default class GithubRestAPI {
             opts.baseUrl = baseUrl
         }
 
-        this.client = new Octokit(opts);
+        this.client = new Octokit(opts).rest;
     }
 
     async me() {
-        const {data} = await this.client.rest.users.getAuthenticated()
+        const {data} = await this.client.users.getAuthenticated()
         return data
     }
 
@@ -32,7 +32,7 @@ export default class GithubRestAPI {
 
         try {
             if (this.isPublic) {
-                await this.client.rest.repos.listForOrg({
+                await this.client.repos.listForOrg({
                     org: "octokit",
                     type: "public",
                 })
@@ -52,6 +52,23 @@ export default class GithubRestAPI {
 
     }
 
+}
+
+export class CodeScan extends API {
+    async listForOrg(org) {
+        const {data} = await this.client.codeScanning.listAlertsForOrg({
+            org,
+        });
+        return data
+    }
+
+    async listForRepo(org, repo) {
+        const {data} = await this.client.codeScanning.listAlertsForRepo({
+            repo: repo,
+            owner: org
+        })
+        return data
+    }
 }
 
 
