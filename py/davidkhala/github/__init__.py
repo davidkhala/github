@@ -15,7 +15,9 @@ class Github:
         )
 
     def me(self) -> AuthenticatedUser:
-        return self.client.get_user()
+        user = self.client.get_user()
+        user._completeIfNeeded()
+        return user
 
     def disconnect(self):
         self.client.close()

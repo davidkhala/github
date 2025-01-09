@@ -15,6 +15,10 @@ class PATTestCase(unittest.TestCase):
     def test_self(self):
         self.assertEqual(self.g.me().login, 'davidkhala')
 
+    def test_code_scan(self):
+        for dependabot in self.g.client.get_organization('stage4fish').get_dependabot_alerts():
+            print(dependabot.url)
+
     def tearDown(self):
         self.g.disconnect()
 
