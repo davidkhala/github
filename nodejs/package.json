@@ -6,7 +6,8 @@
   },
   "devDependencies": {
     "@davidkhala/logger": "latest",
-    "mocha": "latest"
+    "mocha": "latest",
+    "@davidkhala/light": "latest"
   },
   "scripts": {
     "test": "mocha test"

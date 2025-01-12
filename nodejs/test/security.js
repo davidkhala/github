@@ -1,5 +1,7 @@
 import {CodeScan, Dependabot, SecretScan} from "../security.js";
 import assert from "assert";
+import {JSONReadable} from '@davidkhala/light/format.js'
+import fs from "fs";
 const pat = process.env.GITHUB_TOKEN
 describe('codeScan', function () {
     this.timeout(0)
@@ -8,8 +10,8 @@ describe('codeScan', function () {
 
         const org = 'davidkhala'
         const repo = 'ci-cd-utils'
-        const data = await api.listForRepo(org, repo)
-        console.debug(data)
+        const data = await api.listForRepo(org, repo, true)
+        fs.writeFileSync('test/artifacts/codeScan.json', JSONReadable(data))
         await assert.rejects(async()=>{
             await api.listForRepo(undefined, `${org}/${repo}`)
         }, 'HttpError: Not Found - https://docs.github.com/rest')
