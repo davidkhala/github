@@ -54,21 +54,4 @@ export default class API {
 
 }
 
-export class CodeScan extends API {
-    async listForOrg(org) {
-        const {data} = await this.client.codeScanning.listAlertsForOrg({
-            org,
-        });
-        return data
-    }
-
-    async listForRepo(org, repo) {
-        const {data} = await this.client.codeScanning.listAlertsForRepo({
-            repo: repo,
-            owner: org
-        })
-        return data
-    }
-}
-
 
