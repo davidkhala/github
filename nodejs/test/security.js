@@ -12,12 +12,12 @@ describe('codeScan', function () {
 
         const org = 'davidkhala'
         const repo = 'ci-cd-utils'
-        const data = await api.listForRepo(org, repo, true)
+        const data = await api.listForRepo(org, repo)
         fs.writeFileSync('test/artifacts/codeScan.json', JSONReadable(data))
         await assert.rejects(async () => {
             await api.listForRepo(undefined, `${org}/${repo}`)
         }, 'HttpError: Not Found - https://docs.github.com/rest')
-        fs.writeFileSync('test/artifacts/codeScan.csv', ToFile(data.map(CodeScan.flatter)))
+        fs.writeFileSync('test/artifacts/codeScan.csv', ToFile(data.map(CodeScan.flatten)))
 
     })
     it('list for org', async () => {
@@ -35,7 +35,8 @@ describe('secretScans', function () {
         const org = 'davidkhala'
         const repo = 'ci-cd-utils'
         const data = await api.listForRepo(org, repo)
-        console.debug(data)
+        fs.writeFileSync('test/artifacts/secretScan.json', JSONReadable(data))
+        fs.writeFileSync('test/artifacts/secretScan.csv', ToFile(data.map(SecretScan.flatten)))
     })
     it('list for org', async () => {
         const org = 'stage4fish'
@@ -51,7 +52,8 @@ describe('Dependabot', function () {
         const org = 'davidkhala'
         const repo = 'ci-cd-utils'
         const data = await api.listForRepo(org, repo)
-        console.debug(data)
+        fs.writeFileSync('test/artifacts/dependabot.json', JSONReadable(data))
+        fs.writeFileSync('test/artifacts/dependabot.csv', ToFile(data.map(Dependabot.flatten)))
     })
     it('list for org', async () => {
         const org = 'stage4fish'
