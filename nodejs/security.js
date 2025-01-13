@@ -1,5 +1,4 @@
 import API from "./rest.js";
-import {html} from "mocha/lib/reporters/index.js";
 
 export class CodeScan extends API {
     async listForOrg(org) {
@@ -14,7 +13,7 @@ export class CodeScan extends API {
         delete rule.description // just a short form of full_description
     }
 
-    static as_report({
+    static flatter({
                       number, html_url,
                       created_at, updated_at,
                       state,
