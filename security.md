@@ -101,4 +101,5 @@ It provides a visualization of dependency changes (in package manifests or lock 
 - By default, dependency-review-action check will fail if it discovers any vulnerable packages.
   - Part to checklist: A failed check blocks a pull request from being merged when the repository owner requires the dependency review check to pass. 
 
-
+# Competitors
+- Fortify
