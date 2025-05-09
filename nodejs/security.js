@@ -2,9 +2,7 @@ import API from "./rest.js";
 
 export class CodeScan extends API {
     async listForOrg(org) {
-        const {data} = await this.client.codeScanning.listAlertsForOrg({
-            org,
-        });
+        const {data} = await this.client.codeScanning.listAlertsForOrg({org});
         return data
     }
 
@@ -40,10 +38,10 @@ export class CodeScan extends API {
         return item
     }
 
-    async listForRepo(org, repo) {
+    async listForRepo(owner, repo) {
         const {data} = await this.client.codeScanning.listAlertsForRepo({
+            owner,
             repo,
-            owner: org,
         })
         return data
     }
@@ -55,12 +53,33 @@ export class SecretScan extends API {
         return data
     }
 
-    async listForRepo(org, repo) {
+    async listForRepo(owner, repo) {
         const {data} = await this.client.secretScanning.listAlertsForRepo({
-            owner: org,
+            owner,
             repo
         })
         return data
+    }
+
+    async enable(owner, repo) {
+        await this.client.repos.update({
+            owner,
+            repo,
+            security_and_analysis: {
+                secret_scanning: {status: "enabled"},
+                secret_scanning_push_protection: {status: "enabled"}
+            }
+        })
+    }
+
+    async disable(owner, repo) {
+        await this.client.repos.update({
+            owner,
+            repo,
+            security_and_analysis: {
+                secret_scanning: {status: 'disabled'}
+            }
+        })
     }
 
     static pretty(item) {
