@@ -10,7 +10,9 @@ vice versa of github.com/davidkhala
 - [Github Helpdesk Ticket](https://support.github.com/tickets)
 - [Give Feedback to Github](https://github.com/orgs/community/discussions)
 - [Github.com status live report](https://www.githubstatus.com/)
-- [Github :clown_face: Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet)
+- Design
+  - [Github :clown_face: Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet)
+  - [GitHub brand toolkit](https://brand.github.com/guides/getting-started)
 - [Github Roadmap](https://github.com/github/roadmap)
   - [project kanban](https://github.com/orgs/github/projects/4247)
 ## Related projects
