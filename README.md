@@ -13,6 +13,7 @@ vice versa of github.com/davidkhala
 - Design
   - [Github :clown_face: Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet)
   - [GitHub brand toolkit](https://brand.github.com/guides/getting-started)
+  - [Community GitHub Action Branding](https://github.com/actions-cool/github-action-branding)
 - [Github Roadmap](https://github.com/github/roadmap)
   - [project kanban](https://github.com/orgs/github/projects/4247)
 ## Related projects
