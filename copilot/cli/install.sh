@@ -1,0 +1,1 @@
+curl -fsSL https://gh.io/copilot-install | sudo bash
