@@ -1,4 +1,6 @@
 # Free security
+## Personal access token
+is a Bearer Token 
 ## Dependency graph
 Dependency graph is part of repository [Insights](../../network/dependencies)
 > GitHub uses the dependency graph to add dependency reviews to the pull request.
