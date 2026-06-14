@@ -1,3 +1,4 @@
+> GitHub's AI coding agent for the terminal -- ollama
 # `copilot`
 [source](https://github.com/github/copilot-cli)
 
