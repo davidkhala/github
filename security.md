@@ -1,6 +1,7 @@
 # Free security
 ## Personal access token
-is a Bearer Token 
+is a Bearer Token
+- Cannot access repository that invited me to as a collaborator. 
 ## Dependency graph
 Dependency graph is part of repository [Insights](../../network/dependencies)
 > GitHub uses the dependency graph to add dependency reviews to the pull request.
