@@ -5,3 +5,7 @@ function Install-GH {
 function Update-GH() {
   winget upgrade --id GitHub.cli
 }
+function Login(){
+  gh auth login
+}
+
