@@ -8,4 +8,6 @@ function Update-GH() {
 function Login(){
   gh auth login
 }
-
+function Login-Status(){
+  gh auth status
+}
